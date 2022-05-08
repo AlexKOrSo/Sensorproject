@@ -6,7 +6,7 @@
 
 /**
  * @brief Holds all possible prescaler values for ADC
- * Holds the actual value of the prescaler, which enables the usage in e. g. further calculations.
+ * Holds the exponent value of the prescaler.
  */
 typedef enum
 {
@@ -57,7 +57,7 @@ typedef enum
 typedef struct
 {
     ADC_PRESCALER prescaler;
-ADC_STATUS state;           //Open to discussion if it is meaningful to put a basicly this redundant state variable somewhere instead of reading the state from the corresponding hardware registers
+    ADC_STATUS state;           //Open to discussion if it is meaningful to put a basicly this redundant state variable somewhere instead of reading the state from the corresponding hardware registers
 } ADC_Config;
 
 
