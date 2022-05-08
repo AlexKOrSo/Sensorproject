@@ -41,12 +41,27 @@ typedef enum
     MUX_0 = 0xF
 } MUX_SELECT;
 
+typedef enum
+{
+    NO_ERROR = 0,
+    ERROR = -1,
+}ADC_ERROR;
+
+typedef enum
+{
+    UNCONFIGURED = 0,
+    READY = 1,
+    BUSY = 2
+}ADC_STATUS;
+
 typedef struct
 {
     ADC_PRESCALER prescaler;
-
+ADC_STATUS state;           //Open to discussion if it is meaningful to put a basicly this redundant state variable somewhere instead of reading the state from the corresponding hardware registers
 } ADC_Config;
 
+
 ADC_Config ADC_Init(ADC_PRESCALER Prescale_Value, REF_VOLTAGE reference, MUX_SELECT source_channel);
+ADC_ERROR ADC_ReadInput(ADC_Config* config,uint16_t* value);
 
 #endif
