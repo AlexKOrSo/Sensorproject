@@ -7,7 +7,7 @@ void inline ADC_doConvserion()
 
 void inline ADC_waitForConversion()
 {
-    while (ADCSRA && (~(0x1 << ADSC)))
+    while (ADCSRA & (~(0x1 << ADSC)))
         ;
 }
 
