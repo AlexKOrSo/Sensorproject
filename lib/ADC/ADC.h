@@ -3,6 +3,7 @@
 
 #include "avr/io.h"
 #include <stdint.h>
+#include "avr/delay.h"
 
 /**
  * @brief Holds all possible prescaler values for ADC
