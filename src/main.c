@@ -21,15 +21,7 @@ int main(void)
   char text[text_length+1]; 
   const char test[]={"Test\0"};
   
-  
-  DDRB |= (1 << LED); 
-
-  
-  uart_puts(test);
- 
-  
-  
-  ADC_Config configuration = ADC_Init(PRSC_4,INTERNAL,MUX_ADC0);
+  ADC_Config configuration = ADC_Init(PRSC_4,AREF,MUX_ADC0);
  
   volatile uint16_t value = 0;
   while (1)
