@@ -59,4 +59,5 @@ void uart_puts (char *s)
         uart_putc(*s);
         s++;
     }
+    uart_putc('\n');
 }
