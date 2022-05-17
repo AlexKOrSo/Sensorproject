@@ -21,7 +21,7 @@ int main(void)
   char text[text_length+1]; 
   const char test[]={"Test\0"};
   
-  ADC_Config configuration = ADC_Init(PRSC_4,AREF,MUX_ADC0);
+  ADC_Config configuration = ADC_Init(PRSC_128,AREF,MUX_ADC0);
  
   volatile uint16_t value = 0;
   while (1)
@@ -29,7 +29,7 @@ int main(void)
       ADC_ReadInput(&configuration,&value);   
       uart_puts(utoa(value,text,10));
       uart_puts("\n");
-      _delay_ms(1000);
+      //_delay_ms(1000);
   }
   #endif
   

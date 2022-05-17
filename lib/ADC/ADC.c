@@ -27,6 +27,7 @@ ADC_Config ADC_Init(ADC_PRESCALER Prescale_Value, REF_VOLTAGE reference, MUX_SEL
 
     ADCSRA = (temp.prescaler << ADPS0) | (0x1 << ADEN); //
     ADC_doConvserion();
+    uint16_t dummy = ADCW;
     temp.state = READY;
     return temp;
 }
