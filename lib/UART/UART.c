@@ -61,3 +61,13 @@ void uart_puts (char *s)
     }
     uart_putc('\n');
 }
+
+void uart_puts_length (char *s,uint8_t length)
+{
+    for (uint8_t i = 0; i < length; i++)
+    {
+        uart_putc(*(s+i));
+    }
+    uart_putc('\n');
+    
+}

@@ -18,5 +18,5 @@ void Uart_Init(uint32_t baudrate);
 
 uint8_t Uart_RecieveString(char* buffer,uint8_t length);
 void uart_puts (char *s);
-
+void uart_puts_length (char *s,uint8_t length);
 #endif
